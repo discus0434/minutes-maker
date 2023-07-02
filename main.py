@@ -15,7 +15,37 @@ class OutputData(BaseModel):
 
 
 class MinutesMakerAPI:
-    def __init__(self, model: str, cpu_threads: int = 1, num_workers: int = 1):
+    """
+    API for Minutes Maker.
+
+    Attributes
+    ----------
+    app : FastAPI
+        FastAPI instance.
+    mm : MinutesMaker
+        MinutesMaker instance.
+
+    Methods
+    -------
+    minutes_maker
+        Minutes Maker API endpoint.
+    """
+
+    def __init__(self, model: str, cpu_threads: int = 0, num_workers: int = 1):
+        """
+        Initialize MinutesMakerAPI.
+
+        Parameters
+        ----------
+        model : str
+            model name for summarization.
+        cpu_threads : int, optional
+            number of threads for CPU whisper inference,
+            by default 0 for auto.
+        num_workers : int, optional
+            number of workers for whisper inference,
+            by default 1 for non-parallel.
+        """
         self.app = FastAPI()
         self.mm = MinutesMaker(
             model=model, cpu_threads=cpu_threads, num_workers=num_workers
@@ -43,17 +73,51 @@ class MinutesMakerAPI:
         category: str = Form(...),
         content: str = Form(...),
     ) -> OutputData:
+        """
+        Minutes Maker API endpoint called when a POST request is sent to
+        "/minutes_maker".
+
+        This method is composed of the following steps:
+
+        1. Save the file to a temporary directory.
+        2. Make timeline and summary of the meeting or lecture.
+        3. Return timeline and summary.
+
+        Parameters
+        ----------
+        file : UploadFile
+            audio or video file.
+        filename : str
+            filename of the uploaded file.
+        language : str
+            language of the uploaded file, "en" or "ja".
+        category : str
+            category of the uploaded file, "meeting" or "lecture".
+        content : str
+            topic of the meeting or lecture in the uploaded file.
+
+        Returns
+        -------
+        OutputData
+            timeline and summary of the uploaded file.
+        """
+        # 0. await file.read() to get bytes
         file = await file.read()
+
         with TemporaryDirectory() as tempdir:
-            # use the same extension as the uploaded file
+            # 1. save the file to a temporary directory
             with open(f"{tempdir}/{filename}", "wb") as f:
                 f.write(file)
+
+            # 2. make timeline and summary of the meeting or lecture
             timeline, summary = self.mm(
                 audio_or_video_file_path=f"{tempdir}/{filename}",
                 language=language,
                 category=category,
                 content=content,
             )
+
+        # 3. return timeline and summary
         return OutputData(timeline=timeline, summary=summary)
 
 
