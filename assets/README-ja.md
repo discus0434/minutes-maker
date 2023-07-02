@@ -1,7 +1,7 @@
 # Minutes Maker
 
 <h1 align="center">
-  <img src="./assets/sample.gif" width=100%>
+  <img src="../assets/sample.gif" width=100%>
 </h1>
 
 **Minutes Makerは、会議や講義の逐次書き起こしと要約を自動生成するウェブアプリです。**
@@ -57,7 +57,7 @@ make up
 ## Usage
 
 <p align="center">
-  <img src="./assets/sample.png" width=50%>
+  <img src="../assets/sample.png" width=50%>
 </p>
 
 _フォームに入力してSubmitボタンをクリックするだけです！_
