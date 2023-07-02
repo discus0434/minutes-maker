@@ -88,7 +88,7 @@ _Just fill the form and click the **Submit** button!_
 
 ## Requirements
 
-- Computer with x86-64 architecture
+- Computer
 - Docker
 
 ## License
