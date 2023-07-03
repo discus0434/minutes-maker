@@ -153,7 +153,8 @@ class JapaneseLecturePrompts(Enum):
 
         ## 1. レクチャーのサマリ
         ## 2. レクチャーで説明された主要なポイント
-        ## 3. レクチャーの結論から考えられるToDoもしくはNext Action
+        ## 3. レクチャーの結論
+        ## 4. その他、レクチャーの内容に関するメモ
         """
     )
     SUMMARIZE_USER_PROMPT_FOR_SHORTENING: str = inspect.cleandoc(
@@ -207,7 +208,8 @@ class EnglishLecturePrompts(Enum):
 
         ## 1. Lecture Summary
         ## 2. Key Points Explained in the Lecture
-        ## 3. ToDos or Next Actions from Lecture Conclusions
+        ## 3. Lecture Conclusions
+        ## 4. Other Notes on the Lecture Content
         """
     )
     SUMMARIZE_USER_PROMPT_FOR_SHORTENING: str = inspect.cleandoc(
