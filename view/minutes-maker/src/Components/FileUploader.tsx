@@ -180,12 +180,12 @@ const FileUploader: React.FC<FileUploaderProps> = ({
           </RadioGroup>
         </FormControl>
       </Box>
-      {/* text input for content */}
+      {/* text input for content(topic) */}
       <FormLabel
         component="legend"
         sx={{ fontWeight: "bold", color: "primary.main", fontFamily: "Ubuntu" }}
       >
-        4. Enter meeting/lecture content
+        4. Enter meeting/lecture topic
       </FormLabel>
       <TextField
         variant="outlined"

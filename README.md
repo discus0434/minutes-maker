@@ -81,10 +81,10 @@ _Just fill the form and click the **Submit** button!_
 
     Select the category of the audio/video file, **meeting** or **lecture**. Appropriate setting of this parameter will improve the quality of the summary.
 
-4. **Enter meeting/lecture content**
+4. **Enter meeting/lecture topic**
 
-    Enter the content of the meeting/lecture, such as the theme of it (e.g. "development of the new product").
-    Set appropriate content to improve the quality of the transcript.
+    Enter the topic of the meeting/lecture, such as the theme of it (e.g. "development of the new product").
+    Set appropriate topic to improve the quality of the transcript.
 
 ## Requirements
 
