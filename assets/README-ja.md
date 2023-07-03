@@ -4,7 +4,7 @@
   <img src="../assets/sample.gif" width=100%>
 </h1>
 
-**Minutes Makerは、会議や講義の逐次書き起こしと要約を自動生成するウェブアプリです。**
+**Minutes Makerは、会議や講義の書き起こしと要約を自動生成するウェブアプリです。**
 
 ## Overview
 
@@ -18,7 +18,7 @@
 
 ## Installation
 
-#### 1. 環境変数を`.env`ファイルに設定します
+#### 1. 環境変数を`.env`ファイルに設定
 
 以下の環境変数を設定する必要があります。
 
@@ -36,7 +36,7 @@ echo "OPENAI_API_KEY='sk-XXX'" >> .env
 echo "REACT_APP_PUBLIC_IP='XXX.XXX.XXX.XXX'" >> .env
 ```
 
-#### 2. Dockerイメージをビルドする
+#### 2. Dockerイメージをビルド
 
 マシンがNVIDIA GPUを持っているかどうかは自動的に検出され、適切なDockerイメージがビルドされます。
 
@@ -44,13 +44,13 @@ echo "REACT_APP_PUBLIC_IP='XXX.XXX.XXX.XXX'" >> .env
 make build
 ```
 
-#### 3. アプリケーションを実行する
+#### 3. アプリケーションを実行
 
 ```bash
 make up
 ```
 
-#### 4. アプリケーションにアクセスする
+#### 4. アプリケーションにアクセス
 
 ブラウザで`http://<PUBLIC_IP or 0.0.0.0>:10356`を開きます。
 
