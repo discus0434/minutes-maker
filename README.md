@@ -93,4 +93,4 @@ _Just fill the form and click the **Submit** button!_
 
 ## License
 
-This repository is licensed under CC BY-NC-SA 4.0. See [LICENSE](./LICENSE.txt) for more information.
+This repository is licensed under CC BY-NC-SA 4.0. See [LICENSE](./LICENSE) for more information.
